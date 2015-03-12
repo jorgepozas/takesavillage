@@ -1,0 +1,56 @@
+<template name="createCarpool">
+    <div class="header">
+        <h1>Create Carpool</h1>
+    </div>
+    {{#if currentUser}}
+    <div class="createForm">
+        <div class="formSection">
+            <div>
+                <div class="formLabel">Carpool Name:</div> <input type="text" id="nameInput" />
+            </div>
+        </div>
+        <div class="formSection">
+            <div class="formSubtitle">Carpool Details</div>
+            <div>
+                <div class="formLabel">Pickup Time (ie. 2pm):</div> <input type="text" id="timepickerInput" />
+            </div>
+            <div>
+                <div class="formLabel">Pickup Location:</div> <input type="text" id="originInput" />
+            </div>
+            <div>
+                <div class="formLabel">Drop-off Location:</div> <input type="text" id="destinationInput" />
+            </div>
+        </div>
+        <div class="formSection">
+            <div class="formSubtitle">When does carpool start and end</div>
+            <div>
+                <div class="formLabel">Start Date:</div> <input type="text" id="startDateInput" />
+            </div>
+            <div>
+                <div class="formLabel">End Date:</div> <input type="text" id="endDateInput" />
+            </div>
+        </div>
+        <div class="formSection">
+            <div class="formSubtitle">What days does that carpool happen</div>
+            <div class="checkboxes">
+                <div class="formLabel">Days of the Week:</div>
+                <label><input type="checkbox" id="monCheckbox" /> <span>Mon</span></label>
+                <label><input type="checkbox" id="tueCheckbox" /> <span>Tue</span></label>
+                <label><input type="checkbox" id="wedCheckbox" /> <span>Wed</span></label>
+                <label><input type="checkbox" id="thuCheckbox" /> <span>Thu</span></label>
+                <label><input type="checkbox" id="friCheckbox" /> <span>Fri</span></label>
+                <label><input type="checkbox" id="satCheckbox" /> <span>Sat</span></label>
+                <label><input type="checkbox" id="sunCheckbox" /> <span>Sun</span></label>
+            </div>
+        </div>
+        <div class="formSection">
+            <div class="buttonContainer">
+                <span class="uButton" id="createCarpoolButton">Create</span>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <h4><a href="/login">Please sign in to create a carpool</a></h4>
+    {{/if}}
+
+</template>

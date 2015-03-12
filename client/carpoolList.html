@@ -1,0 +1,22 @@
+<template name="carpoolList">
+    <div class="header">
+        <h1>Carpools</h1>
+    </div>
+    {{#if currentUser}}
+    <ul class="list">
+        {{#each carpool}}
+        {{> carpoolListing}}
+        {{else}}
+        You have no carpools. <a href="/createCarpool">Try creating one.</a>
+        {{/each}}
+    </ul>
+    {{else}}
+    <h4><a href="/login">Please sign in to view carpools</a></h4>
+    {{/if}}
+</template>
+
+<template name="carpoolListing">
+    <li>
+        <a href="/carpool/{{_id}}">{{name}}</a>
+    </li>
+</template>

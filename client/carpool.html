@@ -1,0 +1,147 @@
+<template name="carpoolSchedule">
+    <div class="header">
+        <h1>{{name}}</h1>
+    </div>
+    <p>
+        {{#each schedules}}
+    <div class="schedule">
+        <div class="location">{{origin}} --> {{destination}} @ {{pickupTime}}</div>
+
+        <div class="dates">{{startDate}} - {{endDate}}</div>
+    </div>
+    {{/each}}
+    </p>
+
+    <div>
+        <h4>{{summaryStatus}}</h4>
+    </div>
+    <hr/>
+
+    {{#if showSummary}}
+    <h3 class="subtitle">{{summaryTitle}}</h3>
+    <h5>{{summarySubtitle}}</h5>
+    {{>summary}}
+    {{/if}}
+    {{#if notAdmin}}
+    {{else}}
+        <div>
+            <input type="button" id="summaryFinished" value="Submit" />
+        </div>
+    {{/if}}
+    <hr/>
+
+    <h4>People in Carpool</h4>
+    {{#each users}}
+    <div>{{userName}}</div>
+    {{/each}}
+    {{#each invites}}
+    <div>{{this}}</div>
+    {{/each}}
+
+    {{#if notAdmin}}
+    <div><textarea placeholder="Add emails separated by semicolons to invite more" id="inviteText" ></textarea></div>
+    <input type="button" id="invitePeople" value="Invite" />
+    {{/if}}
+    <hr/>
+
+    {{#if notAdmin}}
+    <h3 class="subtitle">Provide your availability:</h3>
+    <h5>Give us information on what days you are available to do the carpool, and which days are your preferred, so we can create the best carpool schedule for everyone. The more days you mark as available, the more likely we find something that works for everyone. Change availability by clicking on each of the days. Once everyone has entered their availability, we will provide an optimized schedule.</h5>
+    <div class="keysection">
+        <span class="minibuttonsection"><img class="minibutton" src="/buttonBlue.png" /> Available</span>
+        <span class="minibuttonsection"><img class="minibutton" src="/buttonGreen.png" /> Preferred</span>
+        <span class="minibuttonsection"><img class="minibutton" src="/buttonRed.png" /> Unavailable</span>
+    </div>
+    <div class="floatContainer">
+        {{#each parentSlots}}
+        {{> scheduleSlot}}
+        {{/each}}
+    </div>
+    <hr/>
+    {{/if}}
+    {{> chat}}
+
+</template>
+
+<template name="scheduleSlot">
+    <div class="slot">
+        <p>
+            {{dateString}}
+        </p>
+        {{selected}}
+        <img class="button" src="{{buttonImage}}" />
+    </div>
+</template>
+
+
+<!---------------- SUMMARY ---------------------------------->
+
+<template name="summary">
+    <!-- Dates Column -->
+    <div class="summaryColumn">
+        {{#each slots}}
+        <div class="summarySlot summaryRowHeader {{rowHeaderCssClass}}">{{dateString}}</div>
+        {{/each}}
+    </div>
+
+    <!-- Profiles Column -->
+    <div class="summaryColumn">
+        {{#each slots}}
+        <div class="summarySlot">
+            <div class="profileBox {{rowHeaderCssClass}}">
+            {{initials}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <!-- Availability Columns -->
+    {{#each users}}
+    <div class="summaryColumn">
+        {{>summaryColumn}}
+    </div>
+    {{/each}}
+</template>
+
+<template name="summaryColumn">
+    {{initials}}
+    {{#each parentSlots}}
+    {{>summarySlot}}
+    {{/each}}
+</template>
+
+<template name="summarySlot">
+    <div class="summarySlot assignButton">
+        <img class="minibutton {{summarySlotSelection}}" src="{{buttonImage}}" />
+    </div>
+</template>
+
+
+<!---------------- CHAT ---------------------------------->
+
+<template name="chat">
+    <div>
+        <div class="header">
+            <h4>Chat</h4>
+        </div>
+        <ul class="list" id="chat">
+            {{#each comments}}
+            {{> chatComment}}
+            {{/each}}
+        </ul>
+        {{#if notAdmin}}
+        <textarea placeholder="Write a comment" id="commentText" ></textarea>
+        <input type="button" id="submitCommentButton" value="Submit" />
+        {{/if}}
+    </div>
+</template>
+
+<template name="chatComment">
+    <li>
+        <p>
+            <span class="textUserName" style="white-space: nowrap;"> {{userName}}</span>
+            {{text}}
+            <span class="textCommentDate" style="white-space: nowrap;"> {{dateAdded}}</span>
+        </p>
+    </li>
+</template>

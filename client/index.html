@@ -1,0 +1,54 @@
+ <head>
+   <title>TakesAVillage</title>
+ </head>
+ <body>
+
+</body>
+
+ <template name="ApplicationLayout">
+     <div class="navbar navbar-inverse navbar-fixed-top">
+         <div class="navbar-inner">
+             <div class="container">
+                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                 <a class="brand" href="/">TakesAVillage</a>
+                 <div class="nav-collapse collapse">
+                     <ul class="nav">
+                         <li><a href="/">Home</a></li>
+                         <li><a href="/carpools">Carpools</a></li>
+                         <li><a href="/createCarpool">Create </a></li>
+                         <li>
+                             {{#if currentUser}}
+                             <a href="/login">Welcome {{currentUser.profile.firstName}}</a>
+                             {{/if}}
+                         </li>
+                     </ul>
+
+                 </div><!--/.nav-collapse -->
+             </div>
+         </div>
+     </div>
+     {{#if notification}}
+     <div class="notifications-bar">
+        {{notification}}
+     </div>
+     {{/if}}
+     <div class="container">
+         {{> yield}}
+     </div>
+ </template>
+
+ <template name="home">
+     <div class="homeContainer">
+         <div class="subHeader">Coordinate carpool rides for your kids with your trusted network in minutes</div>
+         <img class="logo" src="/logo-2.png">
+         <img class="background" src="/children.jpg" />
+         <div class="btnContainer"><a href="/createCarpool" class="uButton">Create Carpool</a></div>
+
+         
+     </div>
+
+ </template>

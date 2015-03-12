@@ -1,0 +1,30 @@
+<template name="signup">
+
+    {{#if currentUser}}
+    <h1><a href="#" id="signOut">Logout</a></h1>
+    {{else}}
+    {{#if showSignUp}}
+    <h1>Create account</h1>
+    {{else}}
+    <h1>Sign in</h1>
+    {{/if}}
+    <div class="loginBox">
+        {{#if showSignUp}}
+        <div class="formSection">
+            <div><div class="formLabel">First Name:</div> <input type="text" id="firstNameInput" /> <div class="formLabel">Last Name:</div> <input type="text" id="lastNameInput" /></div>
+        </div>
+        {{/if}}
+        <div class="formSection">
+            <div><div class="formLabel">Email:</div> <input type="text" id="emailInput" /></div>
+            <div><div class="formLabel">Password:</div> <input type="password" id="passwordInput" /></div>
+        </div>
+        {{#if showSignUp}}
+        <div><span class="uButton" id="signUpButton">Sign Up</span></div>
+        {{else}}
+        <div><span class="uButton" id="signInButton">Login</span></div>
+        {{/if}}
+        <br/>
+        <h5><a href="#" id="signInLink">{{signInLink}}</a></h5>
+    </div>
+    {{/if}}
+</template>

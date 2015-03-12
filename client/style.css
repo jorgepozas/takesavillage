@@ -1,0 +1,220 @@
+body {
+  padding-top: 60px;
+}
+
+.navbar-inner {
+    background-color: #99CB38;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.notifications-bar {
+    background-color: yellowgreen;
+    color: black;
+    position: fixed;
+    top: 40px;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.uButton {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width:auto !important;
+}
+
+.uButton:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.homeContainer {
+    background-color: black;
+    position: relative;
+}
+
+.homeContainer .background {
+    position: relative;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.homeContainer .logo {
+    position: absolute;
+    z-index: 10;
+    height: 12%;
+    top: 10px;
+    left: 20px;
+}
+
+.homeContainer .subHeader {
+    position: absolute;
+    text-align: center;
+    padding-left: 10%;
+    width: 80%;
+    color: white;
+    top: 30%;
+    font-size: 50px;
+    line-height: 1;
+    z-index: 10;
+}
+
+.homeContainer .btnContainer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 70%;
+}
+
+
+
+
+.floatContainer {
+    overflow: auto;
+    width: 100%
+}
+
+.slot {
+    float:left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+.summaryColumn{
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.summarySlot {
+    height: 40px;
+}
+
+.summaryRowHeader {
+    width: 100px;
+    text-align: right;
+}
+
+.summaryRowHeader.currentUser {
+    text-decoration: underline;
+}
+
+.profileBox {
+    background-color: gray;
+    padding: 4px;
+    color: white;
+}
+
+.profileBox.currentUser {
+    background-color: darkblue;
+}
+
+.minibuttonsection{
+    margin-right: 20px;
+}
+.minibutton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+}
+
+.minibutton.summarySlotSelection {
+    border: 1px solid black;
+}
+
+.keysection {
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.slot img {
+    width: 60px;
+    height: 60px;
+}
+
+.schedule .location {
+    font-size: large;
+    margin-bottom: 16px;
+}
+
+.schedule .dates {
+    font-size: medium;
+    margin-bottom: 40px;
+}
+
+.list, .list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.list li {
+    display: block;
+    position: relative;
+    overflow: visible;
+    border-bottom: 1px solid  #ddd;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.list li p {
+    margin-left: 10px;
+}
+
+.textCommentDate{
+    font-size: 80%;
+    color: grey;
+}
+
+.textUserName {
+    font-weight: bold;
+}
+
+.formSection {
+    margin-bottom: 20px;
+}
+
+.formSection .formSubtitle {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.formLabel {
+    font-size: 16px;
+}
+
+.checkboxes label {
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+.checkboxes input {
+    vertical-align: middle;
+}
+.checkboxes label span {
+    vertical-align: middle;
+}
+
